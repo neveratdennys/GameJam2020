@@ -1,0 +1,47 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class delayAppear : MonoBehaviour
+{
+    public GameObject TextObj;
+     float TmStart;
+     float TmLen=2f;
+     bool paused = true; //we showing?
+ 
+     // Use this for initialization
+     void Start () {
+         TmStart=Time.time;
+     }
+     
+     // Update is called once per frame
+     void Update () {
+	     if (!paused)
+	     {
+		     // Do all you unPaused code here.
+		     // animating stuff, moving it whatever
+		     currentRunTime += Time.deltaTime;
+		     if (currentRunTime >= runTime)
+		     {
+			     paused = true;
+			     currentRunTIme = 0.0f;
+			     StartCoroutine(DoPause());
+			     Debug.Log(paused);
+		     }
+	     }
+     }
+
+     IEnumerator DoPause()
+     {
+	     yield return new WaitForSeconds(pauseTime);
+	     paused = false;
+	     Debug.Log(paused);
+     }
+     /*	     if(Time.time>TmStart + TmLen) 
+	     {
+	     Debug.Log(TmLen);
+
+	     TextObj.SetActive (true);
+	     }
+	     */
+}
