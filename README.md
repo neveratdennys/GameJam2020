@@ -1,5 +1,5 @@
 # GameJam2020
-UBC GameJam2020 with team
+UBC GameJam2020 with team, completed in 48 hours.
 Unity based 2D project
 
 Inspired by Getting Over It (Bennett Foddy) gameplay style.
